@@ -1,0 +1,134 @@
+main {
+  width: 85%;
+  margin: 0 auto 30px;
+  background: $color1;
+ 
+
+  img {
+    width: 100%;
+  }
+
+  .main-container {
+    width: 80%;
+    margin: 0 auto;
+    
+
+    span {
+      color: $color3;
+      font-family: $font2;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 70px 0;
+      position: relative;
+      display: block;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 37%;
+        height: 1px;
+        background: $color4;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @media screen and (max-width: 700px) {
+          width: 30%;
+        }
+        @media screen and (max-width: 450px) {
+          width: 24%;
+        }
+      }
+      &::before {
+        left: 0;
+      }
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}
+
+/******** TOP PART *******/
+.top-part-main {
+  margin-bottom: 5%;
+
+  h3 {
+    @include title;
+    font-size: 2.8rem;
+
+    @media screen and (max-width: 700px) {
+      font-size: 2rem;
+    }
+    @media screen and (max-width: 350px) {
+      font-size: 1.5rem;
+    }
+  }
+
+p {
+  margin: 5% 20%;
+  font-size: 0.7rem;
+  line-height: 30px;
+  font-style: italic;
+
+  @media screen and (max-width: 700px) {
+    margin: 5% 10%;
+  }
+}
+
+.btn {
+  margin: 5% 0;
+}
+
+}
+
+/********* BOTTOM PART ***********/
+.bottom-part-main {
+  margin: 0 -110px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border-top: 1px solid $color4;
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+  
+  .left-part,
+  .right-part {
+      padding: 60px;
+
+      @media screen and (max-width: 700px) {
+        img {
+          width: 70%;
+        }
+      }
+
+      h5 {
+        font-size: 0.7rem;
+        color: $color3;
+      }
+      h3 {
+        @include title;
+        margin: 5% 0;
+      }
+
+      p {
+        font-size: 0.75rem;
+        line-height: 25px;
+        text-align: justify;
+        margin-top: 5%;
+
+        @media screen and (max-width: 700px) {
+          text-align: center;
+          margin: 5% 15%;
+        }
+      }
+
+      .btn {
+        margin: 5% 0;
+      }
+}
+.left-part {
+  border-right: 1px solid $color4;
+}
+}

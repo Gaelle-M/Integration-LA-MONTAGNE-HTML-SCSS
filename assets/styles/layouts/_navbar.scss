@@ -1,0 +1,108 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    height: 65px;
+    background: rgba(255, 255, 255, 0.276);
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.part-left {
+    &:hover li:not(:hover) {
+        background: none;
+        color: $color1;
+    }
+
+    @include center;
+    flex-direction: column;
+    width: 50%;
+  
+   
+    li {
+        @include center;
+        @include title;
+        height: 65px;
+        font-size: 0.8rem;
+        padding: 0 15px;
+        cursor: pointer;
+
+        &:first-child {
+            background: $color1;
+            color: $color2;
+        }
+        &:hover {
+            background: $color1;
+            color: $color2;
+        }
+    }
+
+    @media screen and (max-width: 690px) {
+       
+        li{
+            font-size: 0.6rem;
+        }
+    }
+    @media screen and (max-width: 390px) {
+        li {
+            font-size: 0.5rem;
+        }
+    }
+} 
+
+.part-right {
+    @include center;
+    width: 30%;
+    height: 80px;
+    
+    li {
+        padding: 0 15px;  
+    }
+    a {
+        font-size: 1.6rem;
+        transition: 1s;
+
+        &:hover {
+            color: $color3;
+        }
+    }
+
+    @media screen and (max-width: 785px) {
+        a {
+            font-size: 1.2rem;
+        }
+
+        li {
+            padding: auto;
+        }
+    }
+
+    @media screen and (max-width: 690px) {
+        li {
+            padding: auto;
+
+        }
+         a {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    color: $color1;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .part-left {
+        width: 100%;
+    }
+    .part-right {
+        display: none;
+    }
+}
+

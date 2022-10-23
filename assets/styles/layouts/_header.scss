@@ -1,0 +1,55 @@
+header {
+    @include center;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+
+    .container-header {
+        color: $color1;
+        @include center;
+        flex-direction: column;
+        min-height: 100vh;
+        opacity: 0;
+        transform: translateY(40px);
+        animation: headerAnim 1.5s forwards;
+
+        @keyframes headerAnim {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 4.2rem;
+            width:55%;
+            @include title;
+            @media screen and (max-width: 600px) {
+                font-size: 3rem;
+            }
+            @media screen and (max-width: 545px) {
+                font-size: 2.5rem;
+                width: 80%;
+            }
+        }
+        p {
+            font-style: italic;
+            padding: 3% 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 1px $color2;
+
+            @media screen and (max-width: 530px) {
+                margin: 0 10%;
+            }
+        }
+        a {
+            font-size: 3.5rem;
+            padding: 2% 0;
+        }
+    }
+}
+
+
+
+
